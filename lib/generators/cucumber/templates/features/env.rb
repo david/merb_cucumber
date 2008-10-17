@@ -11,3 +11,6 @@ require "merb-core"
 require "spec"
 
 Merb.start_environment(:testing => true, :adapter => 'runner', :environment => ENV['MERB_ENV'] || 'test')
+
+require 'merb_cucumber/feature'
+  
