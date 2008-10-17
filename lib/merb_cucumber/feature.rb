@@ -1,0 +1,2 @@
+module Merb::Test
+end
