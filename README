@@ -1,4 +1,6 @@
 merb_cucumber
 =============
 
-A plugin for the Merb framework that provides ...
+Merb + Cucumber integration
+
+  merb-gen cucumber
