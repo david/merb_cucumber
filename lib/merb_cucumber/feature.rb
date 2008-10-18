@@ -10,7 +10,7 @@ module Merb
         $main.Before do
           # Getting all the adapters configured in DataMapper
           @__transactions__ = DataMapper::Repository.adapters.values.map do |adapter|
-            transaction = DataMapper::Transaction.new(adapater)
+            transaction = DataMapper::Transaction.new(adapter)
             transaction.begin
             transaction
           end
@@ -57,9 +57,9 @@ module Merb
       include Merb::Test::RouteHelper
       include Merb::Test::ViewHelper
     
-      if defined?(Merb.orm == :datamapper)
+      if Merb.orm == :datamapper
         include DataMapperWorld
-      elsif defined?(Merb.orm == :activerecord)
+      elsif Merb.orm == :activerecord
         include ActiveRecordWorld
       end
       

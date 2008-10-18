@@ -1,6 +1,7 @@
 require 'cucumber/rake/task'
 
-Cucumber::Rake::Task::BINARY = Merb.root / 'bin' / 'cucumber'
+Cucumber::Rake::Task::BINARY = Merb.root / 'bin' / 'cucumber' # dirty hack! 
+
 Cucumber::Rake::Task.new(:features) do |t|
   t.cucumber_opts = "--format pretty"
 end
