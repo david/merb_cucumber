@@ -5,5 +5,6 @@ if defined?(Merb::Plugins)
     Merb::BootLoader.after_app_loads do
       require File.join(File.dirname(__FILE__) / "merb_cucumber" / "feature")
     end
-  end 
+  end
+  
 end
