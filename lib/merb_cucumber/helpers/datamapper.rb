@@ -1,3 +1,5 @@
+$main = self # This must be included in the env.rb file!
+
 module Merb
   module Test
     module Helpers
