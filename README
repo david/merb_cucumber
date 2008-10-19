@@ -1,6 +1,29 @@
 merb_cucumber
 =============
 
-Merb + Cucumber integration
+Merb + Cucumber integration with Webrat support.
 
+
+Installation
+------------
+
+If you want to use webrat, you need to install the fork at http://github.com/david/webrat.git
+
+
+First Time
+----------
+
+  cd your_merb_app
   merb-gen cucumber
+  
+For Webrat run this instead:
+
+  merb-gen cucumber --session-type webrat
+
+It will also install a simple login feature that should pass if you're using merb-auth.
+
+
+Usage
+-----
+
+  rake features

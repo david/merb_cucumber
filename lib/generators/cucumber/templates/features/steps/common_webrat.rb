@@ -1,6 +1,10 @@
 # Commonly used webrat steps
 # http://github.com/brynary/webrat
 
+When /^I go to (.*)$/ do |path|
+  visits path
+end
+
 When /^I press "(.*)"$/ do |button|
   clicks_button(button)
 end
