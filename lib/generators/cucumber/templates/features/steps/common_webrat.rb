@@ -1,7 +1,7 @@
 # Commonly used webrat steps
 # http://github.com/brynary/webrat
 
-When /^I go to "(.*)"$/ do |path|
+When /^I go to (.*)$/ do |path|
   visits path
 end
 
