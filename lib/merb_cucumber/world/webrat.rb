@@ -1,4 +1,4 @@
-require 'webrat/rack/rack_session'
+# require 'webrat/rack/rack_session'
 require File.join(File.dirname(__FILE__), 'base')
 
 module Merb
