@@ -9,14 +9,17 @@ module Merb::Generators
     
     template(:env) { |t| t.source = t.destination = "features/env.rb" }
     
-    template(:example_feature) { |t| t.source = t.destination = "features/login.feature" }
-    template(:example_feature_steps) { |t| t.source = t.destination = "features/steps/login_steps.rb" }
-    
+    template(:example_feature, :session_type => :webrat) do |t| 
+      t.source = t.destination = "features/login.feature" 
+    end
+    template(:example_feature_steps, :session_type => :webrat) do |t| 
+      t.source = t.destination = "features/steps/login_steps.rb"
+    end
     template(:common_webrat, :session_type => :webrat) do |t| 
       t.source = t.destination = "features/steps/common_webrat.rb"
     end
-    template(:cucumber, :after => :chmod) { |t| t.source = t.destination = "bin/cucumber" }
     
+    template(:cucumber, :after => :chmod) { |t| t.source = t.destination = "bin/cucumber" }
     def chmod(action)
       File.chmod(0755, action.destination)
     end
