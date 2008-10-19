@@ -7,9 +7,7 @@ module Merb
       class Webrat < Webrat::RackSession
         include Base
         
-        def response_body
-          @response.body.to_s
-        end
+        attr_reader :response
 
         %w(get head post put delete).each do |verb|
           define_method(verb) do |*args| # (path, data, headers = nil)
@@ -26,6 +24,14 @@ module Merb
             end
 
             @response = request(path, all)
+            
+            class << @response
+              def body
+                super.to_s
+              end
+            end
+            
+            @response
           end
         end
       end
