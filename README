@@ -42,8 +42,8 @@ $ rake cucumber:feature[authentication]
 * When you are implementing the steps of an scenario, please use the new request test helper, if you try to use the
   dispatch_to method, it won't work as expected.
 
-* If you are using Webrat, remember to use it only on the actions that return a 200 status, if they respond with a redirect,
-  Webrat won't work as expected
+* If you are using Webrat, remember to use it only on the actions that return a 200 status, if they respond with a 
+  redirect, Webrat won't work as expected.
 
 
 == Credits
