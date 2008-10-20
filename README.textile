@@ -1,0 +1,41 @@
+merb_cucumber
+=============
+
+Merb + Cucumber integration with Webrat support.
+
+=== Requirements
+
+* cucumber >= 0.1.8
+* webrat   >= 0.2.1 (Optional)
+
+
+=== First Time
+
+On your merb project root, you must run
+  
+  $ merb-gen cucumber
+  
+For Webrat support run the command with the option webrat:
+
+  $ merb-gen cucumber --session-type webrat
+
+In this case, it will also install a simple login feature that should pass if you're using merb-auth.
+
+=== Usage
+
+merb_cucumber does not provide feature generators, that's because is (very) recommended that you write the feature
+specifications manually.
+
+To execute all the features just run:
+$ rake cucumber:features:all
+
+To execute just one feature, you'll need to run:
+$ rake cucumber:feature[<feature-name>]
+
+For example, if you have a feature called "authentication.feature" you should execute the rake task like this
+$ rake cucumber:feature[authentication]
+
+== Credits
+
+Roman Gonzalez [romanandreg@gmail.com]
+David Leal     [dgleal@gmail.com]
