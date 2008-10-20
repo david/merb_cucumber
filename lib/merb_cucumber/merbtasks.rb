@@ -1,17 +1,15 @@
-require 'cucumber/rake/task'
+require File.join(File.dirname(__FILE__), "rake", "task")
 
-Cucumber::Rake::Task::BINARY = Merb.root / 'bin' / 'cucumber' # dirty hack! 
+Merb::Cucumber::Task.new
 
-Cucumber::Rake::Task.new(:features) do |t|
-  t.cucumber_opts = "--format pretty"
-end
-
-namespace :merb_cucumber do 
+namespace :cucumber do 
   task :test_env do
     Merb.start_environment(:environment => "test", :adapter => 'runner')
   end
-end
-
-if Merb.orm == :datamapper
-  task :features => ['merb_cucumber:test_env', 'db:automigrate']
+  task "features:all" => :test_env
+  task :feature       => :test_env
+  if Merb.orm == :datamapper
+    task "features:all" => "db:automigrate"
+    task :feature       => "db:automigrate"
+  end
 end
