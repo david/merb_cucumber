@@ -5,6 +5,7 @@ Merb + Cucumber integration with Webrat support.
 
 === Requirements
 
+* merb-core >= 0.9.9
 * cucumber >= 0.1.8
 * webrat   >= 0.2.1 (Optional)
 
@@ -34,6 +35,16 @@ $ rake cucumber:feature[<feature-name>]
 
 For example, if you have a feature called "authentication.feature" you should execute the rake task like this
 $ rake cucumber:feature[authentication]
+
+
+=== Notes
+
+* When you are implementing the steps of an scenario, please use the new request test helper, if you try to use the
+  dispatch_to method, it won't work as expected.
+
+* If you are using Webrat, remember to use it only on the actions that return a 200 status, if they respond with a redirect,
+  Webrat won't work as expected
+
 
 == Credits
 
