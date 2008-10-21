@@ -8,6 +8,7 @@ module Merb::Generators
     option :session_type, :default => :simple, :desc => 'Session type to use (one of: simple, webrat)'
     
     template(:env) { |t| t.source = t.destination = "features/env.rb" }
+    template(:common_result_steps) { |t| t.source = t.destination = "features/steps/common_result_steps.rb" }
     
     template(:example_feature, :session_type => :webrat) do |t| 
       t.source = t.destination = "features/login.feature" 
