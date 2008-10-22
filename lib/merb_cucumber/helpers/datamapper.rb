@@ -8,16 +8,20 @@ module Merb
         def self.included(base)
 
           $main.Before do
-            # Getting all the adapters configured in DataMapper
-            @__transactions__ = ::DataMapper::Repository.adapters.values.map do |adapter|
-              transaction = ::DataMapper::Transaction.new(adapter)
+            repository(:default) do
+              transaction = DataMapper::Transaction.new(repository)
               transaction.begin
-              transaction
+              repository.adapter.push_transaction(transaction)
             end
           end
 
           $main.After do
-            @__transactions__.each { |transaction| transaction.rollback }
+            repository(:default) do
+              while repository.adapter.current_transaction
+                repository.adapter.current_transaction.rollback
+                repository.adapter.pop_transaction
+              end
+            end
           end
 
         end
