@@ -9,7 +9,7 @@ module Merb
 
           $main.Before do
             repository(:default) do
-              transaction = DataMapper::Transaction.new(repository)
+              transaction = ::DataMapper::Transaction.new(repository)
               transaction.begin
               repository.adapter.push_transaction(transaction)
             end
