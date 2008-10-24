@@ -9,4 +9,5 @@ Feature: Login
     And I fill in "login" with "i_dont_exist"
     And I fill in "password" with "and_i_dont_have_a_password"
     And I press "Log In"
-    Then I should see "Login or Password were incorrect"
+    Then the login request should fail
+    Then I should see an error message
