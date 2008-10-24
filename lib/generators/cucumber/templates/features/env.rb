@@ -9,13 +9,13 @@ end
 
 require "merb-core"
 require "spec"
-<% if session_type == :webrat -%>
+<% if options[:session_type] == :webrat -%>
 require "webrat"
 <% end -%>
 require "merb_cucumber/world/<%= session_type %>"
-<% if Merb.orm == :datamapper -%>
+<% if (options[:orm] || Merb.orm) == :datamapper -%>
 require "merb_cucumber/helpers/datamapper"
-<% elsif Merb.orm == :activerecord -%>
+<% elsif (options[:orm] || Merb.orm) == :activerecord -%>
 require "merb_cucumber/helpers/activerecord"
 <% end -%>
 
