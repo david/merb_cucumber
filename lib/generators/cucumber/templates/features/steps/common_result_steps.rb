@@ -7,7 +7,7 @@ Then /^I should not see "(.*)"$/ do |text|
 end
 
 Then /^I should see an? (\w+) message$/ do |message_type|
-  response.should have_xpath("//div[@class='#{message_type}']")
+  response.should have_xpath("//*[@class='#{message_type}']")
 end
 
 Then /^the (.*) ?request should fail/ do |_|
