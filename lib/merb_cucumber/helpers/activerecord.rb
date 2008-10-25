@@ -4,9 +4,8 @@ module Merb
   module Test
     module Helpers
       module ActiveRecord
-
-        def self.included(base)
-
+        module ClassMethods
+          def use_transactional_fixtures
             # Let's set a transaction on the ActiveRecord connection when starting a new scenario
             $main.Before do
               if ActiveRecord::Base.connection.respond_to?(:increment_open_transactions)
@@ -26,15 +25,14 @@ module Merb
                 ActiveRecord::Base.send :decrement_open_transactions
               end
             end
-
+          end
         end
-
       end
     end
     
     module World
       module Base
-        include Helpers::ActiveRecord
+        extend Helpers::ActiveRecord::ClassMethods
       end
     end
   end
