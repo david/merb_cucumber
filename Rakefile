@@ -5,9 +5,9 @@ require 'merb-core'
 require 'merb-core/tasks/merb'
 
 GEM_NAME = "merb_cucumber"
-GEM_VERSION = "0.1.1  "
-AUTHOR = "Roman Gonzalez, David Leal"
-EMAIL = "romanandreg@gmail.com, dgleal@gmail.com"
+GEM_VERSION = "0.1.0"
+AUTHOR = ["Roman Gonzalez", "David Leal"]
+EMAIL = ["romanandreg@gmail.com", "dgleal@gmail.com"]
 HOMEPAGE = "http://github.com/david/merb_cucumber"
 SUMMARY = "Cucumber integration for Merb"
 
@@ -20,14 +20,13 @@ spec = Gem::Specification.new do |s|
   s.extra_rdoc_files = ["README", "LICENSE", 'TODO']
   s.summary = SUMMARY
   s.description = s.summary
-  s.author = AUTHOR
+  s.authors = AUTHOR
   s.email = EMAIL
   s.homepage = HOMEPAGE
   s.add_dependency('merb', '>= 0.9.9')
   s.add_dependency('cucumber', '>= 0.1.7')
   s.require_path = 'lib'
   s.files = %w(LICENSE README Rakefile TODO Generators) + Dir.glob("{lib,spec}/**/*")
-  
 end
 
 Rake::GemPackageTask.new(spec) do |pkg|
@@ -50,3 +49,7 @@ task :gemspec do
     file.puts spec.to_ruby
   end
 end
+
+require 'spec/rake/spectask'
+require 'spec/rake/spectask'
+require 'merb-core/test/tasks/spectasks'
