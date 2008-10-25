@@ -1,0 +1,33 @@
+h1. merb_cucumber
+
+Merb + Cucumber integration with Webrat support.
+
+h2. Requirements
+
+* merb-core >= 0.9.9
+* cucumber >= 0.1.8
+* webrat   >= 0.2.1 (Optional)
+
+h2. First Time
+
+Inside your merb project root, run
+  
+  $ merb-gen cucumber
+  
+For Webrat support, run 
+
+  $ merb-gen cucumber --session-type webrat
+
+This will also install a sample login feature that should pass if you're using merb-auth.
+
+h2. Usage
+
+To execute all the features run
+
+  $ rake features
+
+h2. Notes
+
+* When you are implementing the steps of an scenario, please use the new request test helper, if you try to use the
+  dispatch_to method, it won't work as expected.
+* Webrat considers all status codes above 299 to be errors. We are trying to change that upstream, but if you're reading this notice, the situation hasn't changed yet. While this is case, the sample feature won't pass unless you have patched webrat.
