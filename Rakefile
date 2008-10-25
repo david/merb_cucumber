@@ -17,7 +17,7 @@ spec = Gem::Specification.new do |s|
   s.version = GEM_VERSION
   s.platform = Gem::Platform::RUBY
   s.has_rdoc = true
-  s.extra_rdoc_files = ["README", "LICENSE", 'TODO']
+  s.extra_rdoc_files = ["README.textile", "LICENSE", 'TODO']
   s.summary = SUMMARY
   s.description = s.summary
   s.authors = AUTHOR
@@ -26,7 +26,7 @@ spec = Gem::Specification.new do |s|
   s.add_dependency('merb', '>= 0.9.9')
   s.add_dependency('cucumber', '>= 0.1.7')
   s.require_path = 'lib'
-  s.files = %w(LICENSE README Rakefile TODO Generators) + Dir.glob("{lib,spec}/**/*")
+  s.files = %w(LICENSE README.textile Rakefile TODO Generators) + Dir.glob("{lib,spec}/**/*")
 end
 
 Rake::GemPackageTask.new(spec) do |pkg|
