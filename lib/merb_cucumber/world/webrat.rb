@@ -1,3 +1,5 @@
+require 'webrat'
+require 'webrat/merb'
 require File.join(File.dirname(__FILE__), 'base')
 
 module Merb
