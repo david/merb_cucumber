@@ -5,7 +5,7 @@ require File.join(File.dirname(__FILE__), 'base')
 module Merb
   module Test
     module World
-      class Webrat < Webrat::Session
+      class Webrat < ::Webrat::Session
         include Base
       end
     end

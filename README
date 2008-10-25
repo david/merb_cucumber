@@ -3,27 +3,50 @@ merb_cucumber
 
 Merb + Cucumber integration with Webrat support.
 
+=== Requirements
 
-Installation
-------------
+* merb-core >= 0.9.9
+* cucumber >= 0.1.8
+* webrat   >= 0.2.1 (Optional)
 
-If you want to use webrat, you need to install the fork at http://github.com/david/webrat.git
 
+=== First Time
 
-First Time
-----------
-
-  cd your_merb_app
-  merb-gen cucumber
+On your merb project root, you must run
   
-For Webrat run this instead:
+  $ merb-gen cucumber
+  
+For Webrat support run the command with the option webrat:
 
-  merb-gen cucumber --session-type webrat
+  $ merb-gen cucumber --session-type webrat
 
-It will also install a simple login feature that should pass if you're using merb-auth.
+In this case, it will also install a simple login feature that should pass if you're using merb-auth.
+
+=== Usage
+
+merb_cucumber does not provide feature generators, that's because is (very) recommended that you write the feature
+specifications manually.
+
+To execute all the features just run:
+$ rake cucumber:features:all
+
+To execute just one feature, you'll need to run:
+$ rake cucumber:feature[<feature-name>]
+
+For example, if you have a feature called "authentication.feature" you should execute the rake task like this
+$ rake cucumber:feature[authentication]
 
 
-Usage
------
+=== Notes
 
-  rake features
+* When you are implementing the steps of an scenario, please use the new request test helper, if you try to use the
+  dispatch_to method, it won't work as expected.
+
+* If you are using Webrat, remember to use it only on the actions that return a 200 status, if they respond with a 
+  redirect, Webrat won't work as expected.
+
+
+== Credits
+
+Roman Gonzalez [romanandreg@gmail.com]
+David Leal     [dgleal@gmail.com]
