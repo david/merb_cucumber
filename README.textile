@@ -4,9 +4,9 @@ Merb + Cucumber integration with Webrat support.
 
 h2. Requirements
 
-* merb-core >= 0.9.9
-* cucumber >= 0.1.8
-* webrat   >= 0.2.1 (Optional)
+* merb-core >  0.9.10
+* cucumber  >= 0.1.8
+* webrat    >= 0.2.1 (Optional)
 
 h2. First Time
 
