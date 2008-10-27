@@ -14,6 +14,10 @@ describe "common files generator", :shared => true do
     @generator.should create('/tmp/features/steps/common_result_steps.rb')
   end
   
+  it "should generate the lib/tasks/cucumber.rake" do
+    @generator.should create('/tmp/features/steps/common_result_steps.rb')
+  end
+  
   it "should generate the features/steps/common_resource_steps.rb file" do
     @generator.should create('/tmp/features/steps/common_resource_steps.rb')
   end
