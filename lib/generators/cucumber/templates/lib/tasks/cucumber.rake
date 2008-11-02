@@ -1,10 +1,12 @@
 require 'cucumber/rake/task'
 
-Cucumber::Rake::Task::BINARY = Merb.root / 'bin' / 'cucumber'
-Cucumber::Rake::Task.new(:features) do |t|
+cucumber_options = proc do |t|
+  t.binary        = Merb.root / 'bin' / 'cucumber'
   t.cucumber_opts = "--format pretty"
 end
 
+Cucumber::Rake::Task.new(:features, &cucumber_options)
+Cucumber::Rake::FeatureTask.new(:feature, &cucumber_options)
 namespace :merb_cucumber do 
   task :test_env do
     Merb.start_environment(:environment => "test", :adapter => 'runner')
@@ -12,7 +14,10 @@ namespace :merb_cucumber do
 end
 
 <% if orm == :datamapper %>
-task :features => ['merb_cucumber:test_env', 'db:automigrate']
+dependencies = ['merb_cucumber:test_env', 'db:automigrate']
+task :features => dependencies
+task :feature  => dependencies
 <% else %>
 task :features => 'merb_cucumber:test_env'
+task :feature  => 'merb_cucumber:test_env'
 <% end %>
