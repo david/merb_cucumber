@@ -14,8 +14,11 @@ namespace :merb_cucumber do
   end
 end
 
-if Merb.orm == :datamapper
-  dependencies = ['merb_cucumber:test_env', 'db:automigrate']
-  task :features => dependencies
-  task :feature  => dependencies
-end
+<% if orm == :datamapper %>
+dependencies = ['merb_cucumber:test_env', 'db:automigrate']
+task :features => dependencies
+task :feature  => dependencies
+<% else %>
+task :features => 'merb_cucumber:test_env'
+task :feature  => 'merb_cucumber:test_env'
+<% end %>

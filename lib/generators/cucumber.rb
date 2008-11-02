@@ -14,6 +14,7 @@ module Merb::Generators
     option :session_type, :default => :simple, :desc => 'Session type to use (one of: simple, webrat)'
     
     template(:env) { |t| t.source = t.destination = "features/env.rb" }
+    template(:rake) { |t| t.source = t.destination = "lib/tasks/cucumber.rake" }
     template(:common_result_steps) { |t| t.source = t.destination = "features/steps/common_result_steps.rb" }
     template(:common_resource_steps) { |t| t.source = t.destination = "features/steps/common_resource_steps.rb" }
     
