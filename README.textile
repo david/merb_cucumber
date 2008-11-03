@@ -6,7 +6,7 @@ h2. Requirements
 
 * merb-core >  0.9.10
 * cucumber  >= 0.1.8
-* webrat    >= 0.2.1 (Optional)
+* webrat    >= 0.2.2 (Optional)
 
 h2. First Time
 
