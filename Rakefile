@@ -5,7 +5,7 @@ require 'merb-core'
 require 'merb-core/tasks/merb'
 
 GEM_NAME = "merb_cucumber"
-GEM_VERSION = "0.2.2"
+GEM_VERSION = "0.2.2.1"
 AUTHOR = ["Roman Gonzalez", "David Leal"]
 EMAIL = ["romanandreg@gmail.com", "dgleal@gmail.com"]
 HOMEPAGE = "http://github.com/david/merb_cucumber"

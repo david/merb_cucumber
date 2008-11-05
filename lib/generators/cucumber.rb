@@ -15,6 +15,7 @@ module Merb::Generators
     
     template(:env) { |t| t.source = t.destination = "features/env.rb" }
     template(:rake) { |t| t.source = t.destination = "lib/tasks/cucumber.rake" }
+    template(:autotest) { |t| t.source = t.destination = "autotest/cucumber_merb_rspec.rb" }
     template(:common_result_steps) { |t| t.source = t.destination = "features/steps/common_result_steps.rb" }
     
     template(:example_feature, :session_type => :webrat) { |t|  t.source = t.destination = "features/login.feature" }
