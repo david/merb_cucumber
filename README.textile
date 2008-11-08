@@ -4,9 +4,9 @@ Merb + Cucumber integration with Webrat support.
 
 h2. Requirements
 
-* merb-core >=  0.9.13
-* cucumber  >= 0.1.8
-* webrat    > 0.2.1 (Optional)
+* merb-core >=  1.0
+* cucumber  >= 0.1.9
+* webrat    >= 0.3.1 (Optional)
 
 h2. First Time
 
@@ -30,3 +30,4 @@ h2. Notes
 
 * When you are implementing the steps of an scenario, please use the new request test helper, if you try to use the
   dispatch_to method, it won't work as expected.
+* Webrat methods other than 'visits' are now singular only.
