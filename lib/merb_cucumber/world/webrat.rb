@@ -1,12 +1,13 @@
+require File.join(File.dirname(__FILE__), 'base')
 require 'webrat'
 require 'webrat/merb'
-require File.join(File.dirname(__FILE__), 'base')
 
 module Merb
   module Test
     module World
-      class Webrat < ::Webrat::Session
+      class Webrat
         include Base
+        include ::Webrat::Methods
       end
     end
   end
