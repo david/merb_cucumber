@@ -23,8 +23,8 @@ spec = Gem::Specification.new do |s|
   s.authors = AUTHOR
   s.email = EMAIL
   s.homepage = HOMEPAGE
-  s.add_dependency('merb-core', '~> 1')
-  s.add_dependency('cucumber', '>= 0.1.8')
+  s.add_dependency('merb-core', '~> 1.0')
+  s.add_dependency('cucumber', '>= 0.1.9')
   s.require_path = 'lib'
   s.files = %w(LICENSE README.textile Rakefile TODO Generators) + Dir.glob("{lib,spec}/**/*")
 end
