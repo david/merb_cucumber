@@ -2,11 +2,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{merb_cucumber}
-  s.version = "0.3.1"
+  s.version = "0.3.1.1"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Roman Gonzalez", "David Leal"]
-  s.date = %q{2008-11-11}
+  s.date = %q{2008-11-13}
   s.description = %q{Cucumber integration for Merb}
   s.email = ["romanandreg@gmail.com", "dgleal@gmail.com"]
   s.extra_rdoc_files = ["README.textile", "LICENSE", "TODO"]
