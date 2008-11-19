@@ -1,3 +1,5 @@
 scope 'merb-gen' do
-  Merb.add_generators File.join(File.dirname(__FILE__), 'lib', 'generators', 'cucumber')
+  generators_dir = File.join(File.dirname(__FILE__), 'lib', 'generators')
+  Merb.add_generators File.join(generators_dir, 'cucumber')
+  Merb.add_generators File.join(generators_dir, 'feature')
 end

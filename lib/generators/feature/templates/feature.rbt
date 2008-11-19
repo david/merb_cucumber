@@ -1,0 +1,20 @@
+Feature: <%= name.gsub("_", " ") %>
+  To <%= goal %>
+  A <%= role %>
+  Does [something]
+
+  Scenario: [first scenario]
+    Given [precondition]
+		And [another precondition]
+    When [event happens]
+    And [another event happens]
+    Then [outcome]
+    And [another outcome]
+
+	Scenario: [other scenario]
+	  Given [precondition]
+		And [another precondition]
+	  When [event happens]
+	  And [another event happens]
+	  Then [outcome]
+	  And [another outcome]
