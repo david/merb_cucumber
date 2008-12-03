@@ -1,9 +1,9 @@
 Then /^I should see "(.*)"$/ do |text|
-  response.body.should =~ /#{text}/m
+  response.body.to_s.should =~ /#{text}/m
 end
 
 Then /^I should not see "(.*)"$/ do |text|
-  response.body.should_not =~ /#{text}/m
+  response.body.to_s.should_not =~ /#{text}/m
 end
 
 Then /^I should see an? (\w+) message$/ do |message_type|
