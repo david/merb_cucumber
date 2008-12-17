@@ -18,9 +18,9 @@ module Merb::Generators
     template(:autotest) { |t| t.source = t.destination = "autotest/cucumber_merb_rspec.rb" }
     template(:result_steps) { |t| t.source = t.destination = "features/steps/result_steps.rb" }
     
-    template(:example_feature, :session_type => :webrat) { |t|  t.source = t.destination = "features/login.feature" }
+    template(:example_feature, :session_type => :webrat) { |t|  t.source = t.destination = "features/authentication/login.feature" }
     template(:example_feature_steps, :session_type => :webrat) do |t| 
-      t.source = t.destination = "features/steps/login_steps.rb"
+      t.source = t.destination = "features/authentication/steps/login_steps.rb"
     end
     template(:webrat_steps, :session_type => :webrat) do |t| 
       t.source = t.destination = "features/steps/webrat_steps.rb"

@@ -1,5 +1,5 @@
 require File.dirname(__FILE__) + '/spec_helper'
-
+require File.join(File.dirname(__FILE__), '..', 'lib', 'generators', 'feature')
 
 def underscored_file_name(name)
   name.gsub(/\s+/, "_")

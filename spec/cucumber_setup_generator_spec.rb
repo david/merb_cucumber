@@ -1,4 +1,5 @@
 require File.dirname(__FILE__) + '/spec_helper'
+require File.join(File.dirname(__FILE__), '..', 'lib', 'generators', 'cucumber')
 
 describe "common files generator", :shared => true do
 
@@ -67,11 +68,15 @@ describe Merb::Generators::CucumberGenerator do
 
     it_should_behave_like "common files generator"
 
-    it "should not generate the features/login.feature file" do
-      @generator.should_not create('/tmp/features/login.feature')
+    it "should not generate the features/authentication/login.feature file" do
+      @generator.should_not create('/tmp/features/authentication/login.feature')
     end
 
-    it "should not generate the features/steps/common_webrat.rb file" do
+    it "should not generate the features/authentication/steps/login_steps.rb file" do
+      @generator.should_not create('/tmp/features/authentication/steps/login_steps.rb')
+    end
+
+    it "should not generate the features/steps/webrat_steps.rb file" do
       @generator.should_not create('/tmp/features/steps/webrat_steps.rb')
     end
 
@@ -87,11 +92,15 @@ describe Merb::Generators::CucumberGenerator do
 
     it_should_behave_like "common files generator"
 
-    it "should generate the features/login.feature file" do
-      @generator.should create('/tmp/features/login.feature')
+    it "should generate the features/authentication/login.feature file" do
+      @generator.should create('/tmp/features/authentication/login.feature')
     end
 
-    it "should  generate the features/steps/common_webrat.rb file" do
+    it "should generate the features/authentication/steps/login_steps.rb file" do
+      @generator.should create('/tmp/features/authentication/steps/login_steps.rb')
+    end
+
+    it "should generate the features/steps/webrat_steps.rb file" do
       @generator.should create('/tmp/features/steps/webrat_steps.rb')
     end
 
