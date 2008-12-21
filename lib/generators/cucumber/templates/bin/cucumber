@@ -12,4 +12,4 @@ if File.directory?(gems_dir = File.join(Dir.pwd, 'gems')) ||
 end
 
 require 'cucumber/cli'
-Cucumber::CLI.execute []
+Cucumber::CLI.execute ARGV

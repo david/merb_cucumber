@@ -9,7 +9,7 @@ merb_cucumber, you'll need to do the following:
 
 * Change the last line of bin/cucumber to be:
 
-  Cucumber::CLI.execute []
+  Cucumber::CLI.execute ARGV
 
 * Add a cucumber.yml to your Merb.root with the following contents:
 
