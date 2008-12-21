@@ -2,11 +2,26 @@ h1. merb_cucumber
 
 Merb + Cucumber integration with Webrat support.
 
+h2. Migrating to merb_cucumber 0.5.0
+
+merb_cucumber 0.5.0 now requires cucumber 0.1.13, which introduces some breaking changes. If you were already using
+merb_cucumber, you'll need to do the following:
+
+* Change the last line of bin/cucumber to be:
+
+  Cucumber::CLI.execute []
+
+* Add a cucumber.yml to your Merb.root with the following contents:
+
+  default: --format pretty features
+
+If you experience any problems, please contact me (david) on github.
+
 h2. Requirements
 
-* merb-core >=  1.0
-* cucumber  >= 0.1.9
-* webrat    >= 0.3.1 (Optional)
+* merb-core >= 1.0.6.1
+* cucumber  >= 0.1.13
+* webrat    >= 0.3.2 (Optional)
 
 h2. First Time
 

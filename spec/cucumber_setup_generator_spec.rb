@@ -7,6 +7,10 @@ describe "common files generator", :shared => true do
     @generator.should create('/tmp/features/support/env.rb')
   end
 
+  it "should generate the cucumber.yml file" do
+    @generator.should create('/tmp/cucumber.yml')
+  end
+
   it "should generate the bin/cucumber file" do
     @generator.should create('/tmp/bin/cucumber')
   end

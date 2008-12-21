@@ -27,6 +27,7 @@ module Merb::Generators
     end
     
     template(:cucumber, :after => :chmod) { |t| t.source = t.destination = "bin/cucumber" }
+    template(:cucumber_yml) { |t| t.source = t.destination = "cucumber.yml" }
     
     def chmod(action)
       File.chmod(0755, action.destination)
