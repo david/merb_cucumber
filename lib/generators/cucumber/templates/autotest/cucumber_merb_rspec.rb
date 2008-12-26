@@ -1,2 +1,8 @@
 require File.join( File.dirname(__FILE__), 'merb_rspec' ) 
-class Autotest::CucumberMerbRspec < Autotest::MerbRspec ; end
+require "autotest/cucumber_mixin"
+class Autotest::CucumberMerbRspec < Autotest::MerbRspec
+  include CucumberMixin
+  def cucumber
+    `which cucumber`.chomp
+  end
+end
