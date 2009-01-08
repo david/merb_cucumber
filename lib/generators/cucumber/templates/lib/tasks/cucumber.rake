@@ -1,7 +1,7 @@
 require 'cucumber/rake/task'
 
-cucumber_options = proc do |t|
-  t.binary        = Merb.root / 'bin' / 'cucumber'
+cucumber_options = lambda do |t|
+  # if you want to pass some custom options to cucumber, pass them here
 end
 
 Cucumber::Rake::Task.new(:features, &cucumber_options)
