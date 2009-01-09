@@ -5,7 +5,7 @@ require 'merb-core'
 require 'merb-core/tasks/merb'
 
 GEM_NAME = "merb_cucumber"
-GEM_VERSION = "0.5.1.1"
+GEM_VERSION = "0.5.1.2"
 AUTHOR = ["Roman Gonzalez", "David Leal"]
 EMAIL = ["romanandreg@gmail.com", "dgleal@gmail.com"]
 HOMEPAGE = "http://github.com/david/merb_cucumber"
@@ -24,7 +24,7 @@ spec = Gem::Specification.new do |s|
   s.email = EMAIL
   s.homepage = HOMEPAGE
   s.add_dependency('merb-core', '~> 1.0')
-  s.add_dependency('cucumber', '>= 0.1.13')
+  s.add_dependency('cucumber', '>= 0.1.14')
   s.require_path = 'lib'
   s.files = %w(LICENSE README.textile Rakefile TODO Generators) + Dir.glob("{lib,spec}/**/*")
 end
