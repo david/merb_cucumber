@@ -1,4 +1,4 @@
-h1. merb_cucumber
+h1. merb_cucumber (UNMAINTAINED: Maintained repository is now at http://github.com/roman/merb_cucumber)
 
 Merb + Cucumber integration with Webrat support.
 
